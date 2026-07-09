@@ -1,0 +1,41 @@
+.mbos-dashboard-widget .mbos-dashboard-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin: 0 0 10px;
+}
+
+.mbos-dashboard-widget .mbos-dashboard-note {
+    margin: 0;
+    color: #646970;
+}
+
+.mbos-status {
+    margin: 0 0 10px;
+    padding: 8px 10px;
+    border-left: 4px solid #72aee6;
+    background: #f6f7f7;
+}
+
+.mbos-status-success {
+    border-left-color: #00a32a;
+}
+
+.mbos-status-warning {
+    border-left-color: #dba617;
+}
+
+.mbos-status-error {
+    border-left-color: #d63638;
+}
+
+.mbos-editorial-table th,
+.mbos-editorial-table td {
+    vertical-align: middle;
+}
+
+.mbos-editorial-table .mbos-number {
+    text-align: right;
+    white-space: nowrap;
+}
