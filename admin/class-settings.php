@@ -23,11 +23,12 @@ class MBOS_Settings {
 
     public function register_settings() {
         register_setting( 'mbos_settings', 'mbos_ga4_property_id' );
-        register_setting( 'mbos_settings', 'mbos_ga4_service_account_json' );
         register_setting( 'mbos_settings', 'mbos_debug_mode' );
     }
 
     public function render_settings_page() {
+        $credentials_path = get_option( 'mbos_ga4_credentials_path', '' );
+        $has_credentials  = ! empty( $credentials_path );
         ?>
         <div class="wrap">
             <h1>MBOS Editorial Desk Settings</h1>
@@ -55,20 +56,17 @@ class MBOS_Settings {
                     </tr>
 
                     <tr>
-                        <th scope="row">
-                            <label for="mbos_ga4_service_account_json">Service Account JSON</label>
-                        </th>
+                        <th scope="row">Service Account JSON</th>
                         <td>
-                            <textarea
-                                id="mbos_ga4_service_account_json"
-                                name="mbos_ga4_service_account_json"
-                                class="large-text code"
-                                rows="12"
-                                placeholder="Paste service account JSON here for now"
-                            ><?php echo esc_textarea( get_option( 'mbos_ga4_service_account_json', '' ) ); ?></textarea>
+                            <?php if ( $has_credentials ) : ?>
+                                <p><strong>Status:</strong> Credential file saved.</p>
+                                <p><code><?php echo esc_html( basename( $credentials_path ) ); ?></code></p>
+                            <?php else : ?>
+                                <p><strong>Status:</strong> No credential file uploaded yet.</p>
+                            <?php endif; ?>
 
                             <p class="description">
-                                Temporary field for GA4 credentials. Next we will replace this with a secure upload/storage flow.
+                                Upload flow coming next. For now, this confirms MBOS will store a credential file path instead of raw JSON in the database.
                             </p>
                         </td>
                     </tr>
@@ -96,9 +94,7 @@ class MBOS_Settings {
                 <table class="form-table" role="presentation">
                     <tr>
                         <th scope="row">Last Sync</th>
-                        <td>
-                            <?php echo esc_html( get_option( 'mbos_last_sync', 'Never' ) ); ?>
-                        </td>
+                        <td><?php echo esc_html( get_option( 'mbos_last_sync', 'Never' ) ); ?></td>
                     </tr>
                 </table>
 
