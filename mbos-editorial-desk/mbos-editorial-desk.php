@@ -2,7 +2,7 @@
 /**
  * Plugin Name: MBOS Editorial Desk
  * Description: Adds the MBOS Editorial Desk dashboard widget for editorial analytics. Sprint 0.3 improves Google Site Kit GA4 reporting and diagnostics.
- * Version: 0.3.0
+ * Version: 0.3.1
  * Author: Mary & Blake Media
  * Text Domain: mbos-dashboard
  */
@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-define( 'MBOS_DASHBOARD_VERSION', '0.3.0' );
+define( 'MBOS_DASHBOARD_VERSION', '0.3.1' );
 define( 'MBOS_DASHBOARD_FILE', __FILE__ );
 define( 'MBOS_DASHBOARD_PATH', plugin_dir_path( __FILE__ ) );
 define( 'MBOS_DASHBOARD_URL', plugin_dir_url( __FILE__ ) );
