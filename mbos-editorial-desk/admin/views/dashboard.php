@@ -7,8 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="mbos-dashboard-widget">
     <div class="mbos-dashboard-header">
         <p class="mbos-dashboard-note">
-            Sprint 0.3: Site Kit GA4 test build.
-            <?php if ( ! empty( $status['updated_at'] ) ) : ?>
+MBOS Editorial Desk v<?php echo esc_html( MBOS_DASHBOARD_VERSION ); ?>: Site Kit GA4 test build.            <?php if ( ! empty( $status['updated_at'] ) ) : ?>
                 Last refreshed: <?php echo esc_html( $status['updated_at'] ); ?>
             <?php endif; ?>
         </p>
